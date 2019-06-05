@@ -2,9 +2,11 @@
 
 With this module your simpleSAMLphp IdP will be able to write statistical logs in F-TICKS format.
 
+This is a fork of the original [Frank Tamás module](https://github.com/NIIF/simplesamlphp-module-ftickslogger), with slight changes intended for the use at the SIR2 federation in Spain.
+
 ## Install
 
-`composer.phar require niif/simplesamlphp-module-ftickslogger:1.*`
+`composer.phar require rediris-es/simplesamlphp-module-ftickslogger:1.*`
 
 ## Usage
 
