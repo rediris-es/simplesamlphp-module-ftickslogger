@@ -15,7 +15,7 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 	private $attribute = NULL;
 	private $secretsalt = NULL;
 
-	private $typeTag = 'FTICKS/eduid.hu/1.0/';
+	private $typeTag = 'FTICKS/idpnube.sir2.rediris.es/1.0/';
 
 	/**
 	 * Initialize this filter.
@@ -67,6 +67,10 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 				$AP = $state['Source']['entityid'];
 		}
 
+		//TODO: get RP from $state['saml:RequesterID'] array
+		// check if it's defined
+		// check if it's an array
+		// get the last of the values in the array
 		if (array_key_exists('Destination', $state)) {
 			$RP = $state['Destination']['entityid'];
 		}
