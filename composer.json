@@ -1,5 +1,5 @@
 {
-    "name": "niif/simplesamlphp-module-ftickslogger",
+    "name": "rediris-es/simplesamlphp-module-ftickslogger",
     "description": "F-TICKS logger for simplesamlphp",
     "type": "simplesamlphp-module",
     "require": {
