@@ -1,4 +1,5 @@
 <?php
+include ('/var/www/config.php');
 /**
  * F-TICKS logger Authentication Processing filter
  *
@@ -74,6 +75,20 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 		if (array_key_exists('Destination', $state)) {
 			$RP = $state['Destination']['entityid'];
 		}
+
+		//Nos conectamos a la base de datos a la tabla de los fticks para guardar los datos
+		$conn = new mysqli(HOST, USER, PASS, DDBB);
+		// Check connection
+		if ($conn->connect_error) {
+    			echo "Error en la base de datos";
+    			die("Connection failed: " . $conn->connect_error);
+		}
+
+		$TSNuevo = date('Y-m-d H:i:s',$TS);
+		$sql = "INSERT INTO " .TABLAESTADISTICAS. " (uid,TS,AP,RP,PN,AM) VALUES (NULL,'$TSNuevo','$AP','$RP','$PN','$AM')";
+		$result = $conn->query($sql);
+
+
 
 		SimpleSAML_Logger::stats($this->typeTag . '#TS=' . $TS . '#AP=' . $AP . '#RP=' . $RP . '#PN=' . $PN . '#AM=' . $AM . '#');
 	}
