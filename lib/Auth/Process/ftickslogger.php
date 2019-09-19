@@ -73,11 +73,15 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 		// check if it's an array
 		// get the last of the values in the array
 		if (array_key_exists('Destination', $state)) {
-			$longitud = sizeof($state['saml:RequesterID']);
-                        $RP = $state['saml:RequesterID'][$longitud-1];
-                        //error_log("DEBUG: el state vale ".json_encode($state['saml:RequesterID']));
-                        //error_log("DEBUG: la longitud del array es ".$longitud);
-                        //error_log("DEBUG: el SP es ".$state['saml:RequesterID'][$longitud-1]);
+			if(empty($state['saml:RequesterID'][$longitud-1]))
+			{
+				$RP = $state['Destination']['entityid'];
+			}
+			else
+			{
+				$longitud = sizeof($state['saml:RequesterID'])
+				$RP = $state['saml:RequesterID'][$longitud-1];
+			}
 		}
 
 		//Nos conectamos a la base de datos a la tabla de los fticks para guardar los datos
