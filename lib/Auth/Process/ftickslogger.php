@@ -16,7 +16,7 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 	private $attribute = NULL;
 	private $secretsalt = NULL;
 
-	private $typeTag = 'FTICKS/idpnube.sir2.rediris.es/1.0/';
+	private $typeTag = 'FTICKS/IdPnube/1.0/';
 
 	/**
 	 * Initialize this filter.
