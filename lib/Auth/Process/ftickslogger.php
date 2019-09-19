@@ -73,13 +73,13 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 		// check if it's an array
 		// get the last of the values in the array
 		if (array_key_exists('Destination', $state)) {
-			if(empty($state['saml:RequesterID'][$longitud-1]))
+			if(empty($state['saml:RequesterID']))
 			{
 				$RP = $state['Destination']['entityid'];
 			}
 			else
 			{
-				$longitud = sizeof($state['saml:RequesterID'])
+				$longitud = sizeof($state['saml:RequesterID']);
 				$RP = $state['saml:RequesterID'][$longitud-1];
 			}
 		}
