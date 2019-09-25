@@ -93,7 +93,7 @@ class sspmod_ftickslogger_Auth_Process_ftickslogger extends SimpleSAML_Auth_Proc
 		}
 
 		$TSNuevo = date('Y-m-d H:i:s',$TS);
-		$sql = "INSERT INTO " .TABLAESTADISTICAS. " (uid,TS,AP,RP,PN,AM) VALUES (NULL,'$TSNuevo','$AP','$RP','$PN','$AM')";
+		$sql = "INSERT INTO " .ESTADISTICAS_SSO. " (uid,TS,AP,RP,PN,AM) VALUES (NULL,'$TSNuevo','$AP','$RP','$PN','$AM')";
 		$result = $conn->query($sql);
 
 
