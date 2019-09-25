@@ -1,5 +1,5 @@
 <?php
-include ('/var/www/config.php');
+include ("../../../config/configInstitucion.php");
 /**
  * F-TICKS logger Authentication Processing filter
  *
